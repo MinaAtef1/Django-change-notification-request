@@ -20,9 +20,8 @@ def some_function_that_make_some_changes():
     # here comes the magic
     send_change_notification(object_that_needs_to_be_updated,title="title", description="description", priority=2)
  ```
- 
 this will create a notification record with the changes that the function did, ready to be saved based on the user decision 
-
+ and a notification can have multiple changes from multiple diffrent objects
 
 2- A user will receve the notification, but first the user need to supscripe to an object, table, or a queryset
 ![image](https://user-images.githubusercontent.com/36309814/204923526-520b5c42-0405-41e1-987d-4651a53bebb5.png)
@@ -40,3 +39,9 @@ from services.notification import get_user_notifications, get_object_notificatio
 accept_change_notification(notification, user)
 decline_change_notification(notification, user)
 ```
+
+a notification has the object as the target, the data that was changed
+and when it gets accepted the data is then saved to the database,
+
+a better notification view shpuld be added to the admin to view the notification
+with a another view to see the changes and accept or deny them
