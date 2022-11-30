@@ -19,7 +19,7 @@ def some_function_that_make_some_changes():
     object_that_needs_to_be_updated = TestModel("some data")
     # here comes the magic
     send_change_notification(object_that_needs_to_be_updated,title="title", description="description", priority=2)
- ```
+```
 This will create a notification record with the changes that the function made, ready to be saved based on the user's decision.
 and a notification can have multiple changes from multiple different objects.
 
